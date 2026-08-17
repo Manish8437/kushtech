@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "KUSH INTEGRATED SYSTEMS"
+version = "1.0.0"
+id = "artifacts/kush-website"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25379
+
+[services.development]
+run = "pnpm --filter @workspace/kush-website run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kush-website", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/kush-website/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25379"
+BASE_PATH = "/"
