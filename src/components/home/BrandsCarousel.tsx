@@ -1,13 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { company } from '@/lib/company';
 
-const brandsRow1 = [
-  "Hikvision", "Dahua", "CP Plus", "D-Link", "TP-Link", "Cisco"
-];
-
-const brandsRow2 = [
-  "HPE", "Schneider Electric", "Honeywell", "Bosch", "eSSL", "Matrix"
-];
+const brandsRow1 = company.brands.slice(0, 8);
+const brandsRow2 = company.brands.slice(8);
 
 export function BrandsCarousel() {
   return (
@@ -26,7 +22,7 @@ export function BrandsCarousel() {
         {/* Row 1 - Scroll Left */}
         <div className="flex whitespace-nowrap overflow-hidden">
           <motion.div
-            animate={{ x: [0, -1035] }} // Adjust value based on content width
+            animate={{ x: [0, -1035] }}
             transition={{ ease: "linear", duration: 30, repeat: Infinity }}
             className="flex items-center gap-12 md:gap-24 px-6 md:px-12"
           >

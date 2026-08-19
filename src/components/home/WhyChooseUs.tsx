@@ -1,28 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Clock, ShieldCheck, HeadphonesIcon, Award } from 'lucide-react';
+import { ShieldCheck, Cpu, HeadphonesIcon, Award } from 'lucide-react';
+import { company } from '@/lib/company';
 
-const features = [
-  {
-    icon: <Clock className="w-8 h-8" />,
-    title: "10+ Years Experience",
-    desc: "A decade of deep technical expertise in Kanpur's market."
-  },
-  {
-    icon: <ShieldCheck className="w-8 h-8" />,
-    title: "500+ Installations",
-    desc: "Proven track record across large-scale commercial projects."
-  },
-  {
-    icon: <HeadphonesIcon className="w-8 h-8" />,
-    title: "24×7 Support",
-    desc: "Rapid response times for all maintenance and emergencies."
-  },
-  {
-    icon: <Award className="w-8 h-8" />,
-    title: "Certified Engineers",
-    desc: "Trained professionals for Hikvision, Cisco, and major brands."
-  }
+const valueIcons = [
+  <ShieldCheck className="w-8 h-8" />,
+  <Cpu className="w-8 h-8" />,
+  <HeadphonesIcon className="w-8 h-8" />,
+  <Award className="w-8 h-8" />,
 ];
 
 export function WhyChooseUs() {
@@ -50,9 +35,18 @@ export function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[#9CA3AF] text-lg mb-8 leading-relaxed"
+              className="text-[#9CA3AF] text-lg mb-4 leading-relaxed"
             >
-              We don't just sell boxes; we design ecosystems. From the first site survey to post-installation AMC, we take full ownership of your technology infrastructure.
+              {company.subheadline}
+            </motion.p>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="text-primary text-sm font-medium italic mb-8"
+            >
+              {company.tagline}
             </motion.p>
             <motion.ul 
               initial={{ opacity: 0, y: 20 }}
@@ -74,9 +68,9 @@ export function WhyChooseUs() {
 
           <div className="lg:col-span-3">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {features.map((feature, idx) => (
+              {company.values.map((value, idx) => (
                 <motion.div
-                  key={idx}
+                  key={value}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -84,10 +78,15 @@ export function WhyChooseUs() {
                   className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm hover:bg-white/10 transition-colors"
                 >
                   <div className="text-primary mb-6">
-                    {feature.icon}
+                    {valueIcons[idx]}
                   </div>
-                  <h3 className="font-heading font-semibold text-xl mb-3 text-white">{feature.title}</h3>
-                  <p className="text-[#9CA3AF]">{feature.desc}</p>
+                  <h3 className="font-heading font-semibold text-xl mb-3 text-white">{value}</h3>
+                  <p className="text-[#9CA3AF]">
+                    {idx === 0 && "Dependable systems backed by warranty and AMC support."}
+                    {idx === 1 && "Latest HD, IP, WiFi, and biometric technology from global brands."}
+                    {idx === 2 && "Dedicated field engineers available 6 days a week with 24/7 emergency support."}
+                    {idx === 3 && "Certified installation with premium hardware and manufacturer warranties."}
+                  </p>
                 </motion.div>
               ))}
             </div>

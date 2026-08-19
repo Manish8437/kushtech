@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'wouter';
 import { Phone, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { company, formatPhone, telLink } from '@/lib/company';
 
 export function CTABanner() {
   return (
@@ -34,11 +35,11 @@ export function CTABanner() {
               Book Free Survey <ArrowRight className="w-5 h-5" />
             </Link>
             <a 
-              href="tel:+917275442374" 
+              href={telLink(company.contact.primaryPhone)} 
               className="px-8 py-4 bg-transparent text-white border-2 border-white/30 rounded-full font-bold text-lg hover:bg-white/10 hover:border-white transition-colors flex items-center justify-center gap-2"
             >
               <Phone className="w-5 h-5" />
-              Call: +91 7275442374
+              Call: {formatPhone(company.contact.primaryPhone)}
             </a>
           </div>
         </motion.div>

@@ -3,6 +3,7 @@ import { SEO } from '@/components/layout/SEO';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Target, Eye, Users } from 'lucide-react';
 import { StatsSection } from '@/components/home/StatsSection';
+import { company } from '@/lib/company';
 
 import teamPhoto from '@/assets/images/team-photo.jpg';
 
@@ -178,13 +179,9 @@ export default function About() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              { role: "Founder & Director", desc: "10+ years designing enterprise IT architecture across manufacturing, healthcare, and education sectors in Uttar Pradesh.", initials: "KD" },
-              { role: "Lead Project Engineer", desc: "Specialist in high-density Wi-Fi planning, structured cabling, and complex CCTV deployments. Certified Hikvision Partner.", initials: "AR" },
-              { role: "AMC & Support Manager", desc: "Ensuring 99.9% uptime for our retained clients. Manages a dedicated team of field engineers for rapid-response service.", initials: "SM" }
-            ].map((member, idx) => (
+            {company.leadership.map((member, idx) => (
               <motion.div
-                key={idx}
+                key={member.name}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -194,7 +191,8 @@ export default function About() {
                 <div className="w-20 h-20 mx-auto rounded-full bg-primary/15 flex items-center justify-center mb-5 border-4 border-background shadow-lg">
                   <span className="font-heading font-bold text-xl text-primary">{member.initials}</span>
                 </div>
-                <h3 className="font-heading font-bold text-lg text-foreground mb-2">{member.role}</h3>
+                <h3 className="font-heading font-bold text-lg text-foreground mb-1">{member.name}</h3>
+                <p className="text-sm font-medium text-primary mb-2">{member.role}</p>
                 <p className="text-sm text-muted-foreground leading-relaxed">{member.desc}</p>
               </motion.div>
             ))}

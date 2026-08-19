@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { company, telLink } from '@/lib/company';
 import {
   Tooltip,
   TooltipContent,
@@ -18,7 +19,7 @@ export function FloatingButtons() {
               initial={{ scale: 0, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               transition={{ delay: 1, type: "spring", stiffness: 200, damping: 15 }}
-              href="tel:+917275442374"
+              href={telLink(company.contact.primaryPhone)}
               className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all"
               aria-label="Call Now"
             >
@@ -36,7 +37,7 @@ export function FloatingButtons() {
               initial={{ scale: 0, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               transition={{ delay: 1.2, type: "spring", stiffness: 200, damping: 15 }}
-              href="https://wa.me/917275442374"
+              href={`https://wa.me/${company.contact.whatsapp}`}
               target="_blank"
               rel="noreferrer"
               className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all relative"

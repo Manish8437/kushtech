@@ -1,5 +1,5 @@
 import React from 'react';
-import { SEO } from '@/components/layout/SEO';
+import { company } from '@/lib/company';
 import { motion } from 'framer-motion';
 import { Briefcase, MapPin, Clock, Zap, Target, Shield } from 'lucide-react';
 
@@ -134,7 +134,7 @@ export default function Career() {
                 
                 <div className="flex items-center shrink-0">
                   <a 
-                    href={`mailto:kushintegratedsystems@gmail.com?subject=Application for ${job.title}`}
+                    href={`mailto:${company.contact.email}?subject=Application for ${job.title}`}
                     className="w-full md:w-auto px-8 py-3 bg-primary text-primary-foreground font-medium rounded-full hover:bg-primary/90 transition-colors text-center"
                   >
                     Apply Now

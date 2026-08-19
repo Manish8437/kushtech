@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'wouter';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown, Shield, Server, Wifi, Activity } from 'lucide-react';
+import { company } from '@/lib/company';
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -66,7 +67,7 @@ export function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8 text-sm font-medium"
         >
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          Kanpur's #1 Enterprise Technology Partner
+          {company.headline}
         </motion.div>
 
         <motion.h1 
@@ -83,9 +84,17 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed"
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-4 leading-relaxed"
         >
-          Kanpur's most trusted security & IT infrastructure partner — protecting businesses, homes, and institutions since day one.
+          {company.subheadline}
+        </motion.p>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
+          className="text-sm md:text-base text-muted-foreground/80 max-w-2xl mb-10"
+        >
+          {company.pillars.join(" · ")}
         </motion.p>
 
         <motion.div 

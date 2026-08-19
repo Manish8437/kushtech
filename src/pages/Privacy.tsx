@@ -1,6 +1,7 @@
 import React from 'react';
 import { SEO } from '@/components/layout/SEO';
 import { motion } from 'framer-motion';
+import { company, formatPhone } from '@/lib/company';
 
 export default function Privacy() {
   return (
@@ -47,9 +48,10 @@ export default function Privacy() {
             <h2 className="font-heading text-2xl mt-8 mb-4">6. Contact Us</h2>
             <p>If you have any questions about this Privacy Policy, please contact us at:</p>
             <p>
-              <strong>Email:</strong> kushintegratedsystems@gmail.com<br/>
-              <strong>Phone:</strong> +91 7275442374<br/>
-              <strong>Address:</strong> 84/18 Fazalganj, Kanpur, UP 208012
+              <strong>Contact Person:</strong> {company.contact.person}<br/>
+              <strong>Email:</strong> {company.contact.email}<br/>
+              <strong>Phone:</strong> {company.contact.phones.map(formatPhone).join(" / ")}<br/>
+              <strong>Address:</strong> {company.address.full}
             </p>
           </motion.div>
         </div>

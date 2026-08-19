@@ -5,7 +5,7 @@ import { Link } from 'wouter';
 import { 
   Camera, Server, Fingerprint, Flame, HardDrive, Wifi, 
   MonitorSmartphone, RadioReceiver, ScanFace, 
-  DoorClosed, ShieldAlert, Settings, Wrench, Clock, Database, Printer
+  DoorClosed, ShieldAlert, Settings, Wrench, Clock, Database, Printer, Phone
 } from 'lucide-react';
 
 const categories = ["All", "Security", "Networking", "IT Support", "Automation"];
@@ -16,6 +16,7 @@ const servicesList = [
   { cat: "Security", title: "PTZ Cameras", icon: MonitorSmartphone, desc: "Pan-Tilt-Zoom cameras for active perimeter monitoring.", price: "Contact for Pricing" },
   { cat: "Security", title: "ANPR Cameras", icon: ScanFace, desc: "Automatic Number Plate Recognition for entry gates and tolls.", price: "Contact for Pricing" },
   { cat: "Security", title: "Video Door Phone", icon: DoorClosed, desc: "Smart intercom systems with visual verification.", price: "Contact for Pricing" },
+  { cat: "Security", title: "EPABX & Intercom", icon: Phone, desc: "Office telephony, intercom, and multi-line communication systems.", price: "Contact for Pricing" },
   { cat: "Security", title: "Biometric Systems", icon: Fingerprint, desc: "Fingerprint and facial recognition attendance solutions.", price: "Contact for Pricing" },
   { cat: "Security", title: "Access Control", icon: ShieldAlert, desc: "Card, PIN, and biometric door locking mechanisms.", price: "Contact for Pricing" },
   { cat: "Networking", title: "Networking Solutions", icon: Server, desc: "Complete local area network design and deployment.", price: "Contact for Pricing" },

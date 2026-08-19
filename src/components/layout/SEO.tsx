@@ -10,7 +10,7 @@ interface SEOProps {
 
 export function SEO({
   title,
-  description = "Kanpur's Most Trusted Security & IT Infrastructure Partner — Protecting Businesses, Homes, and Institutions Since Day One.",
+  description = "KUSH INTEGRATED SYSTEMS — Your Trusted IT Solutions Partner in Kanpur. CCTV, Biometric Access Control, Intrusion Alarms, EPABX, Video Door Phones & Networking. Smart Technology. Secure Future.",
   image = "/og-image.jpg",
   canonical,
 }: SEOProps) {
