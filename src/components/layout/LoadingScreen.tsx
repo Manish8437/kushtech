@@ -22,6 +22,11 @@ export function LoadingScreen() {
         >
           <div className="flex flex-col items-center gap-6">
             <div className="flex flex-col items-center">
+              <img
+                src={`${import.meta.env.BASE_URL}logo.png`}
+                alt="KUSH Integrated Systems"
+                className="h-24 w-24 md:h-28 md:w-28 object-contain mb-4"
+              />
               <span className="font-heading font-bold text-4xl md:text-5xl tracking-tight text-primary leading-none">
                 KUSH
               </span>

@@ -11,12 +11,19 @@ export function Footer() {
           
           {/* Column 1: Brand */}
           <div>
-            <Link href="/" className="flex flex-col mb-6">
-              <span className="font-heading font-bold text-2xl tracking-tight text-white leading-none">
-                KUSH
-              </span>
-              <span className="text-[0.6rem] font-bold tracking-widest text-[#9CA3AF] leading-none mt-1">
-                INTEGRATED SYSTEMS
+            <Link href="/" className="flex items-center gap-2.5 mb-6">
+              <img
+                src={`${import.meta.env.BASE_URL}logo.png`}
+                alt="KUSH Integrated Systems"
+                className="h-12 w-12 object-contain shrink-0"
+              />
+              <span className="flex flex-col">
+                <span className="font-heading font-bold text-2xl tracking-tight text-white leading-none">
+                  KUSH
+                </span>
+                <span className="text-[0.6rem] font-bold tracking-widest text-[#9CA3AF] leading-none mt-1">
+                  INTEGRATED SYSTEMS
+                </span>
               </span>
             </Link>
             <p className="text-[#9CA3AF] text-sm leading-relaxed mb-4">

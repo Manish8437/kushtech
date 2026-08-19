@@ -73,12 +73,19 @@ export function Header() {
         <div className="flex items-center justify-between">
           
           {/* Logo */}
-          <Link href="/" className="flex flex-col relative z-50">
-            <span className="font-heading font-bold text-2xl tracking-tight text-primary leading-none">
-              KUSH
-            </span>
-            <span className="text-[0.6rem] font-bold tracking-widest text-foreground opacity-80 leading-none mt-1">
-              INTEGRATED SYSTEMS
+          <Link href="/" className="flex items-center gap-2.5 relative z-50">
+            <img
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt="KUSH Integrated Systems"
+              className="h-11 w-11 md:h-12 md:w-12 object-contain shrink-0"
+            />
+            <span className="flex flex-col">
+              <span className="font-heading font-bold text-2xl tracking-tight text-primary leading-none">
+                KUSH
+              </span>
+              <span className="text-[0.6rem] font-bold tracking-widest text-foreground opacity-80 leading-none mt-1">
+                INTEGRATED SYSTEMS
+              </span>
             </span>
           </Link>
 
