@@ -46,7 +46,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [location] = useLocation();
 
   useEffect(() => {
@@ -93,6 +93,7 @@ export function Header() {
           <nav className="hidden lg:flex items-center space-x-1">
             <NavLink href="/" active={location === '/'}>Home</NavLink>
             <NavLink href="/about" active={location === '/about'}>About</NavLink>
+            <NavLink href="/products" active={location === '/products'}>Products</NavLink>
             
             {/* Mega Menu Trigger */}
             <div 
@@ -155,11 +156,11 @@ export function Header() {
           {/* Actions */}
           <div className="flex items-center gap-3 relative z-50">
             <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
               className="p-2 rounded-full hover:bg-secondary transition-colors text-foreground"
               aria-label="Toggle Dark Mode"
             >
-              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {resolvedTheme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             
             <Link href="/contact" className="hidden sm:flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:shadow-[0_0_20px_rgba(0,86,214,0.3)]">
@@ -190,6 +191,7 @@ export function Header() {
             <div className="p-6 flex flex-col gap-4">
               <MobileNavLink href="/" active={location === '/'}>Home</MobileNavLink>
               <MobileNavLink href="/about" active={location === '/about'}>About</MobileNavLink>
+              <MobileNavLink href="/products" active={location === '/products'}>Products</MobileNavLink>
               <div className="py-3 border-b">
                 <span className="text-lg font-heading font-medium text-foreground mb-3 block">Services</span>
                 <div className="pl-4 flex flex-col gap-3 border-l-2 border-primary/20">

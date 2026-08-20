@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'wouter';
-import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, MessageCircle, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, Clock } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { company, formatPhone, telLink } from '@/lib/company';
 
 export function Footer() {
@@ -50,6 +51,7 @@ export function Footer() {
               <li><Link href="/about" className="text-[#9CA3AF] hover:text-primary transition-colors text-sm">About Us</Link></li>
               <li><Link href="/projects" className="text-[#9CA3AF] hover:text-primary transition-colors text-sm">Our Projects</Link></li>
               <li><Link href="/solutions" className="text-[#9CA3AF] hover:text-primary transition-colors text-sm">Solutions</Link></li>
+              <li><Link href="/products" className="text-[#9CA3AF] hover:text-primary transition-colors text-sm">Our Products</Link></li>
               <li><Link href="/brands" className="text-[#9CA3AF] hover:text-primary transition-colors text-sm">Brands We Install</Link></li>
               <li><Link href="/testimonials" className="text-[#9CA3AF] hover:text-primary transition-colors text-sm">Testimonials</Link></li>
               <li><Link href="/career" className="text-[#9CA3AF] hover:text-primary transition-colors text-sm">Careers</Link></li>
@@ -92,7 +94,7 @@ export function Footer() {
                 </div>
               </li>
               <li className="flex items-center gap-3">
-                <MessageCircle className="w-5 h-5 text-[#25D366] shrink-0" />
+                <FaWhatsapp className="w-5 h-5 text-[#25D366] shrink-0" />
                 <a href={`https://wa.me/${company.contact.whatsapp}`} target="_blank" rel="noreferrer" className="text-[#9CA3AF] hover:text-white transition-colors text-sm">
                   {formatPhone(company.contact.primaryPhone)}
                 </a>

@@ -9,6 +9,8 @@ const brandMeta: Record<string, { desc: string; icon: typeof ShieldCheck; color:
   Dahua: { desc: "Professional CCTV and access control solutions", icon: ShieldCheck, color: "text-red-500" },
   "CP Plus": { desc: "Affordable CCTV systems for SMEs", icon: ShieldCheck, color: "text-orange-500" },
   Prama: { desc: "Indian-made surveillance and security products", icon: ShieldCheck, color: "text-purple-500" },
+  Uniview: { desc: "AI-powered IP cameras and video surveillance solutions", icon: ShieldCheck, color: "text-sky-500" },
+  Hifocus: { desc: "Affordable CCTV cameras and DVR/NVR systems", icon: ShieldCheck, color: "text-amber-500" },
   "CVS+": { desc: "CCTV and security solutions for commercial use", icon: ShieldCheck, color: "text-indigo-500" },
   Godrej: { desc: "Trusted locks, safes, and access control systems", icon: ShieldCheck, color: "text-emerald-600" },
   eSSL: { desc: "Biometric attendance and access control devices", icon: ShieldCheck, color: "text-cyan-600" },

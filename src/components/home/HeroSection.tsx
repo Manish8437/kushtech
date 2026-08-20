@@ -25,7 +25,7 @@ export function HeroSection() {
   }));
 
   return (
-    <section ref={containerRef} className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-background pt-20">
+    <section ref={containerRef} className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-background pt-20 pb-12">
       {/* Animated Network Background */}
       <div className="absolute inset-0 z-0 opacity-20 dark:opacity-30">
         {particles.map((p) => (
@@ -130,20 +130,20 @@ export function HeroSection() {
             </div>
           ))}
         </motion.div>
-      </motion.div>
 
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-muted-foreground gap-2"
-      >
-        <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="mt-12 md:mt-16 hidden sm:flex flex-col items-center text-muted-foreground gap-2"
         >
-          <ChevronDown className="w-5 h-5" />
+          <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ChevronDown className="w-5 h-5" />
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>

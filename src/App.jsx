@@ -9,7 +9,6 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { FloatingButtons } from '@/components/layout/FloatingButtons';
-import { BackToTop } from '@/components/layout/BackToTop';
 import { LoadingScreen } from '@/components/layout/LoadingScreen';
 import { CookieBanner } from '@/components/layout/CookieBanner';
 
@@ -21,6 +20,7 @@ import Industries from '@/pages/Industries';
 import Projects from '@/pages/Projects';
 import Gallery from '@/pages/Gallery';
 import Brands from '@/pages/Brands';
+import Products from '@/pages/Products';
 import Testimonials from '@/pages/Testimonials';
 import FAQ from '@/pages/FAQ';
 import Blog from '@/pages/Blog';
@@ -50,7 +50,6 @@ function AppShell({ children }) {
       <main className="flex-1 flex flex-col pt-[80px]">{children}</main>
       <Footer />
       <FloatingButtons />
-      <BackToTop />
       <CookieBanner />
     </div>
   );
@@ -66,6 +65,7 @@ function Router() {
       <Route path="/industries" component={Industries} />
       <Route path="/projects" component={Projects} />
       <Route path="/gallery" component={Gallery} />
+      <Route path="/products" component={Products} />
       <Route path="/brands" component={Brands} />
       <Route path="/testimonials" component={Testimonials} />
       <Route path="/faq" component={FAQ} />

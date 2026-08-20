@@ -1,17 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { submitFormToEmail } from '@/lib/submitForm';
 
 export function Newsletter() {
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Subscribed!",
-      description: "You've successfully joined our newsletter.",
-    });
-    (e.target as HTMLFormElement).reset();
+    const form = e.currentTarget;
+
+    if (form._honey.value) return;
+
+    setLoading(true);
+
+    const formData = new FormData(form);
+    const result = await submitFormToEmail(
+      { email: String(formData.get("email") ?? "") },
+      { subject: "Newsletter subscription — KIS website" },
+    );
+
+    setLoading(false);
+
+    if (result.ok) {
+      toast({
+        title: "Subscribed!",
+        description: "You've successfully joined our newsletter.",
+      });
+      form.reset();
+    } else {
+      toast({
+        title: "Subscription failed",
+        description: result.message,
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -27,17 +51,27 @@ export function Newsletter() {
           </p>
           
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="text"
+              name="_honey"
+              tabIndex={-1}
+              autoComplete="off"
+              className="hidden"
+              aria-hidden="true"
+            />
             <input 
-              type="email" 
+              type="email"
+              name="email"
               required
               placeholder="Enter your email address" 
               className="flex-1 bg-background/50 border border-border rounded-full px-6 py-3 md:py-4 focus:outline-none focus:ring-2 focus:ring-primary text-foreground placeholder:text-muted-foreground"
             />
             <button 
               type="submit"
-              className="bg-foreground text-background font-medium px-8 py-3 md:py-4 rounded-full hover:bg-foreground/90 transition-colors whitespace-nowrap"
+              disabled={loading}
+              className="bg-foreground text-background font-medium px-8 py-3 md:py-4 rounded-full hover:bg-foreground/90 transition-colors whitespace-nowrap disabled:opacity-70"
             >
-              Subscribe
+              {loading ? "Subscribing..." : "Subscribe"}
             </button>
           </form>
           <p className="text-xs text-muted-foreground mt-4">We respect your privacy. No spam, ever.</p>

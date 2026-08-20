@@ -51,7 +51,7 @@ export function IndustriesSection() {
                 <ind.icon className="w-6 h-6" />
               </div>
               <h3 className="font-heading font-semibold text-lg text-foreground mb-2">{ind.name}</h3>
-              <p className="text-xs md:text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 h-0 group-hover:h-auto overflow-hidden text-balance">
+              <p className="text-xs md:text-sm text-muted-foreground text-balance">
                 {ind.desc}
               </p>
             </motion.div>

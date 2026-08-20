@@ -81,11 +81,47 @@ export const company = {
     },
   ] as const,
 
+  /** CCTV & surveillance brands featured on Google Sites products page */
+  products: [
+    {
+      name: "Hikvision",
+      url: "https://www.hikvisionindia.com/",
+      image: "products/hikvision.png",
+    },
+    {
+      name: "CP Plus",
+      url: "https://www.cpplusworld.com/",
+      image: "products/cp-plus.png",
+    },
+    {
+      name: "Prama",
+      url: "https://www.pramaindia.in/",
+      image: "products/prama.png",
+    },
+    {
+      name: "Dahua",
+      url: "https://www.dahuasecurity.com/in/",
+      image: "products/dahua.png",
+    },
+    {
+      name: "Uniview",
+      url: "https://www.uniview.com/",
+      image: "products/uniview.svg",
+    },
+    {
+      name: "Hifocus",
+      url: "https://www.hifocuscctv.com/",
+      image: "products/hifocus.png",
+    },
+  ] as const,
+
   brands: [
     "Hikvision",
     "Dahua",
     "CP Plus",
     "Prama",
+    "Uniview",
+    "Hifocus",
     "CVS+",
     "Godrej",
     "eSSL",
