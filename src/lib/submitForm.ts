@@ -1,5 +1,5 @@
 const FORM_RECIPIENT =
-  import.meta.env.VITE_FORM_RECIPIENT_EMAIL ?? "manishkumarmk1155@gmail.com";
+  import.meta.env.VITE_FORM_RECIPIENT_EMAIL ?? "kushintegratedsystems@gmail.com";
 
 type SubmitOptions = {
   subject?: string;

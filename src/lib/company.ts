@@ -24,7 +24,7 @@ export const company = {
     person: "Sandeep Kushwaha",
     phones: ["7275442374", "8005354413"] as const,
     primaryPhone: "7275442374",
-    email: "manishkumarmk1155@gmail.com",
+    email: "kushintegratedsystems@gmail.com",
     legacyEmail: "kushtech33@gmail.com",
     whatsapp: "917275442374",
   },
