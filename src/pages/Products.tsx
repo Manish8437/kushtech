@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'wouter';
 import { SEO } from '@/components/layout/SEO';
 import { motion } from 'framer-motion';
@@ -7,12 +7,35 @@ import { company } from '@/lib/company';
 
 const assetBase = import.meta.env.BASE_URL;
 
+function ProductLogo({ name, image }: { name: string; image?: string }) {
+  const [failed, setFailed] = useState(false);
+  const showImage = Boolean(image) && !failed;
+
+  if (!showImage) {
+    return (
+      <span className="font-heading font-bold text-xl md:text-2xl text-foreground text-center px-4">
+        {name}
+      </span>
+    );
+  }
+
+  return (
+    <img
+      src={`${assetBase}${image}`}
+      alt={`${name} products`}
+      className={`${name === "Secureye" || name === "Sparsh" ? "bg-black p-3" : ""} max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300`}
+      loading="lazy"
+      onError={() => setFailed(true)}
+    />
+  );
+}
+
 export default function Products() {
   return (
     <>
       <SEO
         title="Our Products"
-        description="Authorized dealer for Hikvision, CP Plus, Prama, Dahua, Uniview, and Hifocus CCTV and surveillance products in Kanpur."
+        description="Authorized dealer for CP Plus, Prama, Hifocus, Dahua, Hikvision, Secureye, Honeywell, Panasonic, eSSL, D-Link, TP-Link, and more surveillance, networking, and storage products in Kanpur."
       />
 
       <section className="pt-32 pb-12 bg-background relative overflow-hidden">
@@ -31,14 +54,14 @@ export default function Products() {
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-foreground"
           >
-            We supply and install premium CCTV and surveillance products from India's most trusted brands.
+            We supply and install CCTV, access control, networking, and storage products from India's most trusted brands.
           </motion.p>
         </div>
       </section>
 
       <section className="py-12 pb-24 bg-background min-h-[50vh]">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {company.products.map((product, idx) => (
               <motion.a
                 key={product.name}
@@ -48,16 +71,11 @@ export default function Products() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.08 }}
+                transition={{ delay: Math.min(idx * 0.03, 0.4) }}
                 className="group glass-panel rounded-2xl border overflow-hidden hover:border-primary/40 hover:shadow-xl transition-all"
               >
                 <div className="aspect-[4/3] bg-white flex items-center justify-center p-6">
-                  <img
-                    src={`${assetBase}${product.image}`}
-                    alt={`${product.name} products`}
-                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
+                  <ProductLogo name={product.name} image={'image' in product ? product.image : undefined} />
                 </div>
                 <div className="px-5 py-4 border-t flex items-center justify-between gap-2">
                   <span className="font-heading font-semibold text-foreground">{product.name}</span>

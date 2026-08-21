@@ -146,7 +146,7 @@ export default function About() {
           <div className="space-y-4">
             {[
               { title: "Engineering-First Approach", body: "We design before we deploy. Every installation begins with a site survey and a custom plan — no guesswork, no shortcuts." },
-              { title: "Premium Hardware Only", body: "We strictly install globally trusted brands — Hikvision, Cisco, HPE, Schneider, Honeywell — with full manufacturer warranties." },
+              { title: "Premium Hardware Only", body: "We strictly install globally trusted brands — Hikvision, Dahua, CP Plus, Honeywell, Panasonic — with full manufacturer warranties." },
               { title: "Obsessive Cable Management", body: "A messy rack is a liability. We ensure structured, labelled, colour-coded cabling on every single project." },
               { title: "Transparent Pricing", body: "Detailed, itemized quotations with no hidden costs. What we quote is what you pay." },
               { title: "Dedicated AMC Division", body: "A separate support team dedicated entirely to post-installation maintenance — available 6 days a week with emergency support 24/7." },
