@@ -24,7 +24,7 @@ export const company = {
     person: "Sandeep Kushwaha",
     phones: ["7275442374", "8005354413"] as const,
     primaryPhone: "7275442374",
-    email: "kushintegratedsystems@gmail.com",
+    email: "manishkumarmk1155@gmail.com",
     legacyEmail: "kushtech33@gmail.com",
     whatsapp: "917275442374",
   },
@@ -37,9 +37,8 @@ export const company = {
     pincode: "208012",
     country: "India",
     full: "84/18 Fazalganj, Near MSME Technology Centre, Kanpur, Uttar Pradesh – 208012",
-    mapsUrl:
-      "https://maps.google.com/?q=84/18+Fazalganj+Near+MSME+Technology+Centre+Kanpur+UP+208012",
-    googleBusinessUrl: "https://share.google/ehNBjHBxsh3dlXEWU",
+    mapsUrl: "https://share.google/buoIUuqPGfcu9x4kQ",
+    googleBusinessUrl: "https://share.google/buoIUuqPGfcu9x4kQ",
   },
 
   hours: {
@@ -79,6 +78,17 @@ export const company = {
       title: "Networking & Maintenance",
       desc: "Structured cabling, switches, Wi-Fi, and ongoing network maintenance.",
     },
+  ] as const,
+
+  inquiryServices: [
+    "CCTV Camera Setup",
+    "Biometric & Access Control",
+    "Intrusion Alarm Systems",
+    "EPABX & Intercom Systems",
+    "Video Door Phone Systems",
+    "Networking & Maintenance",
+    "AMC Services",
+    "Other Query",
   ] as const,
 
   /** Brands featured on the products page */

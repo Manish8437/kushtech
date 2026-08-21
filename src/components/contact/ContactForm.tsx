@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { submitFormToEmail } from '@/lib/submitForm';
+import { company } from '@/lib/company';
 
 export function ContactForm() {
   const { toast } = useToast();
@@ -63,7 +64,7 @@ export function ContactForm() {
             name="name"
             required 
             className="w-full px-4 py-3 rounded-xl bg-background/50 border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-            placeholder="John Doe"
+            placeholder="Enter your full name"
           />
         </div>
         <div className="space-y-2">
@@ -73,7 +74,7 @@ export function ContactForm() {
             name="phone"
             required 
             className="w-full px-4 py-3 rounded-xl bg-background/50 border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-            placeholder="+91 XXXXX XXXXX"
+            placeholder="Enter your phone number"
           />
         </div>
       </div>
@@ -84,7 +85,7 @@ export function ContactForm() {
           type="email"
           name="email"
           className="w-full px-4 py-3 rounded-xl bg-background/50 border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-          placeholder="john@company.com"
+          placeholder="Enter your email address"
         />
       </div>
 
@@ -96,13 +97,11 @@ export function ContactForm() {
           className="w-full px-4 py-3 rounded-xl bg-background/50 border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground appearance-none"
         >
           <option value="">Select a service...</option>
-          <option value="CCTV Installation">CCTV Installation</option>
-          <option value="Networking Solution">Networking Solutions</option>
-          <option value="Biometric & Access Control">Biometric & Access Control</option>
-          <option value="Fire Alarm System">Fire Alarm Systems</option>
-          <option value="Data Recover">Data Recovery</option>
-          <option value="AMC Services">AMC Services</option>
-          <option value="Other Query">Other Query</option>
+          {company.inquiryServices.map((service) => (
+            <option key={service} value={service}>
+              {service}
+            </option>
+          ))}
         </select>
       </div>
 
